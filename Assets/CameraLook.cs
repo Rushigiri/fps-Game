@@ -18,5 +18,6 @@ public class CameraLook : MonoBehaviour
         float x = Input.GetAxis("Mouse X");
         float y = Input.GetAxis("Mouse Y");
         player.Rotate(Vector3.up * x);
+        Debug.Log("heloo");
     }
 }
