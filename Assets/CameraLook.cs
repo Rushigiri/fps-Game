@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraLook : MonoBehaviour
 {
     public Transform player;
+    float z = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,10 @@ public class CameraLook : MonoBehaviour
     {
         float x = Input.GetAxis("Mouse X");
         float y = Input.GetAxis("Mouse Y");
+        z -= y;
+        z = Mathf.Clamp(z, -90f, 30f);
         player.Rotate(Vector3.up * x);
-        Debug.Log("heloo");
+        transform.localRotation = Quaternion.Euler(z, 0f, 0f);
+        // Debug.Log("heloo");
     }
 }
